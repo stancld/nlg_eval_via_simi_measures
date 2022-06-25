@@ -328,7 +328,7 @@ class InfoLM:
             sum_distribution_refs = torch.sum(final_distribution_batch_refs, dim=1) / mask_words_refs.unsqueeze(
                 -1).repeat(1, final_distribution_batch_hypothesis[0].size(-1))
 
-        info_dic = self.compute_infolm(sum_distribution_hypothesis, sum_distribution_refs)
+        info_dic = self.compute_infolm(sum_distribution_refs, sum_distribution_hypothesis)
         return info_dic
 
 
